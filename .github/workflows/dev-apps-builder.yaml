@@ -4,7 +4,7 @@ on:
     pull_request:
         branches:
             - main
-            - "release_*"
+        #    - "release_*"
     workflow_dispatch:
         inputs:
             build-type:
