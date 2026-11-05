@@ -34,37 +34,79 @@ jobs:
             app_path: slc/apps/window_app/thread/matter_thread_soc_window_app_freertos.slcp
             json_file: ./.github/silabs-builds-mg24-ota.json
             available_flash: 1572864 # 1536 KiB
+            slot_size: 557056
+            slot_name: 550K
+
+          - platform: MG24
+            app: multi_sensor_app
+            app_path: slc/apps/multi_sensor_app/thread/matter_thread_soc_multi_sensor_app_freertos.slcp
+            json_file: ./.github/silabs-builds-mg24-ota.json
+            available_flash: 1572864 # 1536 KiB
+            slot_size: 557056
+            slot_name: 550K
+
+          - platform: MG24
+            app: lock_app
+            app_path: slc/apps/lock_app/thread/matter_thread_soc_lock_app_freertos.slcp
+            json_file: ./.github/silabs-builds-mg24-ota.json
+            available_flash: 1572864 # 1536 KiB
+            slot_size: 557056
+            slot_name: 550K
 
           - platform: MGM24
             app: window_app
             app_path: slc/apps/window_app/thread/matter_thread_soc_window_app_freertos.slcp
             json_file: ./.github/silabs-builds-mgm24-ota.json
             available_flash: 1572864 # 1536 KiB
+            slot_size: 557056
+            slot_name: 550K
+
+          - platform: MGM24
+            app: multi_sensor_app
+            app_path: slc/apps/multi_sensor_app/thread/matter_thread_soc_multi_sensor_app_freertos.slcp
+            json_file: ./.github/silabs-builds-mgm24-ota.json
+            available_flash: 1572864 # 1536 KiB
+            slot_size: 557056
+            slot_name: 550K
+
+          - platform: MGM24
+            app: lock_app
+            app_path: slc/apps/lock_app/thread/matter_thread_soc_lock_app_freertos.slcp
+            json_file: ./.github/silabs-builds-mgm24-ota.json
+            available_flash: 1572864 # 1536 KiB
+            slot_size: 557056
+            slot_name: 550K
 
           - platform: MG26
             app: lighting_app
             app_path: slc/apps/lighting_app/thread/matter_thread_soc_lighting_app_freertos.slcp
             json_file: ./.github/silabs-builds-mg26-ota.json
             available_flash: 3276800 # 3200 KiB
+            slot_size: 1048576
+            slot_name: 1MB
 
           - platform: MG26
             app: zigbee_light
             app_path: slc/apps/zigbee_light/thread/matter_thread_soc_zigbee_light_freertos.slcp
             json_file: ./.github/silabs-builds-mg26-ota.json
             available_flash: 3276800 # 3200 KiB
+            slot_size: 1048576
+            slot_name: 1MB
 
           - platform: MGM26
             app: zigbee_light
             app_path: slc/apps/zigbee_light/thread/matter_thread_soc_zigbee_light_freertos.slcp
             json_file: ./.github/silabs-builds-mgm26-ota.json
             available_flash: 3276800 # 3200 KiB
+            slot_size: 1048576
+            slot_name: 1MB
 
     env:
       LABEL: ${{ matrix.platform }} / ${{ matrix.app }}
       AVAILABLE_FLASH: ${{ matrix.available_flash }}
       PAGE_SIZE: 8192 # 8 KiB flash page
       OTA_MARGIN: 102400 # 100 KiB minimum spare flash
-      BOOTLOADER_SLOT_SIZE: 557056 # bootloader storage slot
+      BOOTLOADER_SLOT_SIZE: ${{ matrix.slot_size }}
 
     steps:
       - name: Checkout
@@ -182,7 +224,7 @@ jobs:
           fi
           echo "PASSED: ${LABEL}"
 
-      - name: Bootloader Slot Verification (550K)
+      - name: Bootloader Slot Verification (${{ matrix.slot_name }})
         if: ${{ !cancelled() && steps.gbl.outcome == 'success' }}
         shell: bash
         run: |
