@@ -66,6 +66,6 @@ jobs:
           api_url: ${{ vars.MEMBROWSE_API_URL }}
           verbose: INFO
           # Heap is a fixed reservation that fills the remaining RAM, so it hides real usage.
-          skip_sections: .memory_manager_heap .heap
+          skip_sections: ${{ matrix.skip_sections }}
           # Uncomment to allow CI to pass even when memory budgets are exceeded
           # dont_fail_on_alerts: true

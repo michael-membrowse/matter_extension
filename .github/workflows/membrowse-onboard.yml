@@ -59,6 +59,6 @@ jobs:
           linker_vars: ${{ matrix.linker_vars }}
           binary_search: 'true'
           # Heap is a fixed reservation that fills the remaining RAM, so it hides real usage.
-          skip_sections: .memory_manager_heap .heap
+          skip_sections: ${{ matrix.skip_sections }}
           api_key: ${{ secrets.MEMBROWSE_API_KEY }}
           api_url: ${{ vars.MEMBROWSE_API_URL }}
