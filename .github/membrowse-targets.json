@@ -1,0 +1,425 @@
+[
+  {
+    "target_name": "efr32mg24-brd4187c-lighting_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/thread/matter_thread_soc_lighting_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_lighting_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-air_quality_sensor_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/air_quality_sensor_app/thread/matter_thread_soc_air_quality_sensor_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_air_quality_sensor_app_freertos/build/debug/matter_thread_soc_air_quality_sensor_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_air_quality_sensor_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_air_quality_sensor_app_freertos/build/debug/matter_thread_soc_air_quality_sensor_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-light_switch_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/light_switch_app/thread/matter_thread_soc_light_switch_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_light_switch_app_freertos/build/debug/matter_thread_soc_light_switch_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_light_switch_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_light_switch_app_freertos/build/debug/matter_thread_soc_light_switch_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-lock_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lock_app/thread/matter_thread_soc_lock_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_lock_app_freertos/build/debug/matter_thread_soc_lock_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_lock_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_lock_app_freertos/build/debug/matter_thread_soc_lock_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-thermostat",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/thermostat/thread/matter_thread_soc_thermostat_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_thermostat_freertos/build/debug/matter_thread_soc_thermostat_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_thermostat_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_thermostat_freertos/build/debug/matter_thread_soc_thermostat_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-window_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/window_app/thread/matter_thread_soc_window_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_window_app_freertos/build/debug/matter_thread_soc_window_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_window_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_window_app_freertos/build/debug/matter_thread_soc_window_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-fan_control_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/fan_control_app/thread/matter_thread_soc_fan_control_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_fan_control_app_freertos/build/debug/matter_thread_soc_fan_control_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_fan_control_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_fan_control_app_freertos/build/debug/matter_thread_soc_fan_control_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-closure_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/closure_app/thread/matter_thread_soc_closure_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_closure_app_freertos/build/debug/matter_thread_soc_closure_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_closure_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_closure_app_freertos/build/debug/matter_thread_soc_closure_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-multi_sensor_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/multi_sensor_app/thread/matter_thread_soc_multi_sensor_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_multi_sensor_app_freertos/build/debug/matter_thread_soc_multi_sensor_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_multi_sensor_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_multi_sensor_app_freertos/build/debug/matter_thread_soc_multi_sensor_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-onoff_plug_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/onoff_plug_app/thread/matter_thread_soc_onoff_plug_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_onoff_plug_app_freertos/build/debug/matter_thread_soc_onoff_plug_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_onoff_plug_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_onoff_plug_app_freertos/build/debug/matter_thread_soc_onoff_plug_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-refrigerator_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/refrigerator_app/thread/matter_thread_soc_refrigerator_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_refrigerator_app_freertos/build/debug/matter_thread_soc_refrigerator_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_refrigerator_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_refrigerator_app_freertos/build/debug/matter_thread_soc_refrigerator_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-evse_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/evse_app/thread/matter_thread_soc_evse_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_evse_app_freertos/build/debug/matter_thread_soc_evse_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_evse_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_evse_app_freertos/build/debug/matter_thread_soc_evse_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-performance_test_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/performance_test_app/thread/matter_thread_soc_performance_test_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_performance_test_app_freertos/build/debug/matter_thread_soc_performance_test_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_performance_test_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_performance_test_app_freertos/build/debug/matter_thread_soc_performance_test_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-zigbee_light",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/zigbee_light/thread/matter_thread_soc_zigbee_light_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_zigbee_light_freertos/build/debug/matter_thread_soc_zigbee_light_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_zigbee_light_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_zigbee_light_freertos/build/debug/matter_thread_soc_zigbee_light_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-wake_on_matter",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/wake_on_matter/thread/matter_thread_soc_wake_on_matter_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_wake_on_matter_freertos/build/debug/matter_thread_soc_wake_on_matter_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_wake_on_matter_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_wake_on_matter_freertos/build/debug/matter_thread_soc_wake_on_matter_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-rangehood_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/rangehood_app/thread/matter_thread_soc_rangehood_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_rangehood_app_freertos/build/debug/matter_thread_soc_rangehood_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_rangehood_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_rangehood_app_freertos/build/debug/matter_thread_soc_rangehood_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-platform_template",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/platform_template/thread/matter_thread_soc_platform_template_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_thread_soc_platform_template_freertos/build/debug/matter_thread_soc_platform_template_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_platform_template_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_platform_template_freertos/build/debug/matter_thread_soc_platform_template_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd2703a-lighting_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/thread/matter_thread_soc_lighting_app_freertos.slcp brd2703a",
+    "elf": "out/brd2703a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.out",
+    "ld": "out/brd2703a/matter_thread_soc_lighting_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd2703a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "mgm240-brd4316a-lighting_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/thread/matter_thread_soc_lighting_app_freertos.slcp brd4316a",
+    "elf": "out/brd4316a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.out",
+    "ld": "out/brd4316a/matter_thread_soc_lighting_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4316a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "mgm240-brd4337a-lighting_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/thread/matter_thread_soc_lighting_app_freertos.slcp brd4337a",
+    "elf": "out/brd4337a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.out",
+    "ld": "out/brd4337a/matter_thread_soc_lighting_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4337a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg26-brd4116a-lighting_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/thread/matter_thread_soc_lighting_app_freertos.slcp brd4116a",
+    "elf": "out/brd4116a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.out",
+    "ld": "out/brd4116a/matter_thread_soc_lighting_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4116a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg26-brd2709a-lighting_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/thread/matter_thread_soc_lighting_app_freertos.slcp brd2709a",
+    "elf": "out/brd2709a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.out",
+    "ld": "out/brd2709a/matter_thread_soc_lighting_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd2709a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "mgm260-brd4351a_a02-lighting_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/thread/matter_thread_soc_lighting_app_freertos.slcp brd4351a_a02",
+    "elf": "out/brd4351a_a02/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.out",
+    "ld": "out/brd4351a_a02/matter_thread_soc_lighting_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4351a_a02/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "sixg301-brd4407a-lighting_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/thread/matter_thread_soc_lighting_app_freertos.slcp brd4407a",
+    "elf": "out/brd4407a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.out",
+    "ld": "out/brd4407a/matter_thread_soc_lighting_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4407a/matter_thread_soc_lighting_app_freertos/build/debug/matter_thread_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-lighting_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/wifi/matter_wifi_soc_lighting_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_lighting_app_freertos/build/debug/matter_wifi_soc_lighting_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_lighting_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_lighting_app_freertos/build/debug/matter_wifi_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-air_quality_sensor_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/air_quality_sensor_app/wifi/matter_wifi_soc_air_quality_sensor_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_air_quality_sensor_app_freertos/build/debug/matter_wifi_soc_air_quality_sensor_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_air_quality_sensor_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_air_quality_sensor_app_freertos/build/debug/matter_wifi_soc_air_quality_sensor_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-light_switch_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/light_switch_app/wifi/matter_wifi_soc_light_switch_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_light_switch_app_freertos/build/debug/matter_wifi_soc_light_switch_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_light_switch_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_light_switch_app_freertos/build/debug/matter_wifi_soc_light_switch_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-lock_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lock_app/wifi/matter_wifi_soc_lock_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_lock_app_freertos/build/debug/matter_wifi_soc_lock_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_lock_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_lock_app_freertos/build/debug/matter_wifi_soc_lock_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-thermostat",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/thermostat/wifi/matter_wifi_soc_thermostat_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_thermostat_freertos/build/debug/matter_wifi_soc_thermostat_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_thermostat_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_thermostat_freertos/build/debug/matter_wifi_soc_thermostat_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-window_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/window_app/wifi/matter_wifi_soc_window_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_window_app_freertos/build/debug/matter_wifi_soc_window_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_window_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_window_app_freertos/build/debug/matter_wifi_soc_window_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-fan_control_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/fan_control_app/wifi/matter_wifi_soc_fan_control_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_fan_control_app_freertos/build/debug/matter_wifi_soc_fan_control_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_fan_control_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_fan_control_app_freertos/build/debug/matter_wifi_soc_fan_control_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-closure_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/closure_app/wifi/matter_wifi_soc_closure_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_closure_app_freertos/build/debug/matter_wifi_soc_closure_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_closure_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_closure_app_freertos/build/debug/matter_wifi_soc_closure_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-multi_sensor_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/multi_sensor_app/wifi/matter_wifi_soc_multi_sensor_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_multi_sensor_app_freertos/build/debug/matter_wifi_soc_multi_sensor_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_multi_sensor_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_multi_sensor_app_freertos/build/debug/matter_wifi_soc_multi_sensor_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-onoff_plug_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/onoff_plug_app/wifi/matter_wifi_soc_onoff_plug_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_onoff_plug_app_freertos/build/debug/matter_wifi_soc_onoff_plug_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_onoff_plug_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_onoff_plug_app_freertos/build/debug/matter_wifi_soc_onoff_plug_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-refrigerator_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/refrigerator_app/wifi/matter_wifi_soc_refrigerator_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_refrigerator_app_freertos/build/debug/matter_wifi_soc_refrigerator_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_refrigerator_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_refrigerator_app_freertos/build/debug/matter_wifi_soc_refrigerator_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-evse_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/evse_app/wifi/matter_wifi_soc_evse_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_evse_app_freertos/build/debug/matter_wifi_soc_evse_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_evse_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_evse_app_freertos/build/debug/matter_wifi_soc_evse_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-oven_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/oven_app/wifi/matter_wifi_soc_oven_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_oven_app_freertos/build/debug/matter_wifi_soc_oven_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_oven_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_oven_app_freertos/build/debug/matter_wifi_soc_oven_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-rangehood_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/rangehood_app/wifi/matter_wifi_soc_rangehood_app_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_rangehood_app_freertos/build/debug/matter_wifi_soc_rangehood_app_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_rangehood_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_rangehood_app_freertos/build/debug/matter_wifi_soc_rangehood_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd4338a-platform_template",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/platform_template/wifi/matter_wifi_soc_platform_template_freertos.slcp brd4338a",
+    "elf": "out/brd4338a/matter_wifi_soc_platform_template_freertos/build/debug/matter_wifi_soc_platform_template_freertos.out",
+    "ld": "out/brd4338a/matter_wifi_soc_platform_template_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd4338a/matter_wifi_soc_platform_template_freertos/build/debug/matter_wifi_soc_platform_template_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "siwx917-brd2605a-lighting_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/wifi/matter_wifi_soc_lighting_app_freertos.slcp brd2605a",
+    "elf": "out/brd2605a/matter_wifi_soc_lighting_app_freertos/build/debug/matter_wifi_soc_lighting_app_freertos.out",
+    "ld": "out/brd2605a/matter_wifi_soc_lighting_app_freertos/autogen/linkerfile_SoC.ld",
+    "map_file": "out/brd2605a/matter_wifi_soc_lighting_app_freertos/build/debug/matter_wifi_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-siwx917-ncp-brd4187c-lock_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lock_app/wifi/matter_wifi_917_ncp_lock_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_wifi_917_ncp_lock_app_freertos/build/debug/matter_wifi_917_ncp_lock_app_freertos.out",
+    "ld": "out/brd4187c/matter_wifi_917_ncp_lock_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_wifi_917_ncp_lock_app_freertos/build/debug/matter_wifi_917_ncp_lock_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-siwx917-ncp-brd4187c-thermostat",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/thermostat/wifi/matter_wifi_917_ncp_thermostat_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_wifi_917_ncp_thermostat_freertos/build/debug/matter_wifi_917_ncp_thermostat_freertos.out",
+    "ld": "out/brd4187c/matter_wifi_917_ncp_thermostat_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_wifi_917_ncp_thermostat_freertos/build/debug/matter_wifi_917_ncp_thermostat_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-siwx917-ncp-brd4187c-window_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/window_app/wifi/matter_wifi_917_ncp_window_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_wifi_917_ncp_window_app_freertos/build/debug/matter_wifi_917_ncp_window_app_freertos.out",
+    "ld": "out/brd4187c/matter_wifi_917_ncp_window_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_wifi_917_ncp_window_app_freertos/build/debug/matter_wifi_917_ncp_window_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-siwx917-ncp-brd4187c-fan_control_app",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/fan_control_app/wifi/matter_wifi_917_ncp_fan_control_app_freertos.slcp brd4187c",
+    "elf": "out/brd4187c/matter_wifi_917_ncp_fan_control_app_freertos/build/debug/matter_wifi_917_ncp_fan_control_app_freertos.out",
+    "ld": "out/brd4187c/matter_wifi_917_ncp_fan_control_app_freertos/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_wifi_917_ncp_fan_control_app_freertos/build/debug/matter_wifi_917_ncp_fan_control_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-lighting_app-llvm",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py && SLT_CI=true slc/tools/slt install \"llvm-arm-toolchain-for-embedded/21.1.1@silabs\" -e conan",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/thread/matter_thread_soc_lighting_app_freertos.slcp brd4187c --output_suffix llvm --with toolchain_llvm",
+    "elf": "out/brd4187c/matter_thread_soc_lighting_app_freertos_llvm/cmake_llvm/build/base/matter_thread_soc_lighting_app_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_lighting_app_freertos_llvm/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_lighting_app_freertos_llvm/cmake_llvm/build/base/matter_thread_soc_lighting_app_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "efr32mg24-brd4187c-lighting_app-trustzone",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/lighting_app/thread/trustzone/matter_thread_soc_lighting_app_trustzone_series_2_freertos.slcw brd4187c -pids trustzone",
+    "elf": "out/brd4187c/matter_thread_soc_lighting_app_trustzone_series_2_freertos_solution/lighting_app_nonsecure/build/debug/matter_thread_soc_lighting_app_trustzone_ns_freertos.out",
+    "ld": "out/brd4187c/matter_thread_soc_lighting_app_trustzone_series_2_freertos_solution/lighting_app_nonsecure/autogen/linkerfile.ld",
+    "map_file": "out/brd4187c/matter_thread_soc_lighting_app_trustzone_series_2_freertos_solution/lighting_app_nonsecure/build/debug/matter_thread_soc_lighting_app_trustzone_ns_freertos.map",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "sixg301-brd4407a-bootloader",
+    "setup_cmd": "sudo apt-get update && sudo apt-get install -y git-lfs unzip curl libgl1 libglib2.0-0t64 libdbus-1-3 && git lfs install && git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && mkdir -p slc/tools && curl -fsSL -o /tmp/slt-cli.zip https://www.silabs.com/documents/public/software/slt-cli-1.1.1-linux-x64.zip && unzip -o -q /tmp/slt-cli.zip -d slc/tools && chmod +x slc/tools/slt && python3 slc/sl_setup_env.py",
+    "build_cmd": "git submodule update --init --depth 1 --jobs 8 && git -C third_party/simplicity_sdk lfs pull && git -C third_party/wifi_sdk lfs pull && ./slc/build.sh slc/apps/bootloaders/bootloader_storage_single_4096k_series_3/matter_bootloader_internal_series_3.slcp brd4407a",
+    "elf": "out/brd4407a/matter_bootloader_internal_series_3/build/debug/matter_bootloader_internal_series_3.out",
+    "ld": "out/brd4407a/matter_bootloader_internal_series_3/autogen/linkerfile.ld",
+    "map_file": "out/brd4407a/matter_bootloader_internal_series_3/build/debug/matter_bootloader_internal_series_3.map",
+    "linker_vars": ""
+  }
+]
