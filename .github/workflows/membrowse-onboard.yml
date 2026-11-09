@@ -8,6 +8,11 @@ on:
         required: true
         default: '100'
         type: string
+      target:
+        description: 'Only onboard this target (empty for all targets)'
+        required: false
+        default: ''
+        type: string
 
 jobs:
   load-targets:
@@ -20,7 +25,15 @@ jobs:
 
       - name: Load target matrix
         id: set-matrix
-        run: echo "matrix=$(jq -c '.' .github/membrowse-targets.json)" >> $GITHUB_OUTPUT
+        env:
+          TARGET: ${{ github.event.inputs.target }}
+        run: |
+          matrix=$(jq -c --arg t "$TARGET" 'if $t == "" then . else map(select(.target_name == $t)) end' .github/membrowse-targets.json)
+          if [ "$matrix" = "[]" ]; then
+            echo "::error::No target named '$TARGET' in .github/membrowse-targets.json"
+            exit 1
+          fi
+          echo "matrix=$matrix" >> $GITHUB_OUTPUT
 
   onboard:
     needs: load-targets
@@ -47,12 +60,19 @@ jobs:
       - name: Install packages
         run: ${{ matrix.setup_cmd }}
 
+      # Onboard runs `git clean -fdx` before every build, which deletes the
+      # gitignored slc/tools (slt, zap and the .env that build.sh loads). Keep a
+      # copy outside the checkout and put it back at the same path before each
+      # build, so the absolute paths in .env stay valid.
+      - name: Keep SLC tools outside the checkout
+        run: cp -a slc/tools "${{ runner.temp }}/slc-tools"
+
       - name: Run MemBrowse Onboard Action
         uses: membrowse/membrowse-action/onboard-action@v1
         with:
           target_name: ${{ matrix.target_name }}
           num_commits: ${{ github.event.inputs.num_commits }}
-          build_script: ${{ matrix.build_cmd }}
+          build_script: rm -rf slc/tools && cp -a "${{ runner.temp }}/slc-tools" slc/tools && ${{ matrix.build_cmd }}
           elf: ${{ matrix.elf }}
           ld: ${{ matrix.ld }}
           map_file: ${{ matrix.map_file }}
