@@ -13,6 +13,11 @@ on:
         required: false
         default: ''
         type: string
+      chunk_size:
+        description: 'Commits per job; each build takes ~11 minutes and a job is capped at 6 hours'
+        required: true
+        default: '25'
+        type: string
 
 jobs:
   load-targets:
@@ -22,20 +27,38 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
+      # A single job cannot build 100 commits within GitHub's 6-hour limit, so
+      # split the first-parent history into chunks and onboard each chunk in
+      # its own job. Commits come from main's history even when the workflow
+      # runs from another branch.
       - name: Load target matrix
         id: set-matrix
         env:
           TARGET: ${{ github.event.inputs.target }}
+          NUM_COMMITS: ${{ github.event.inputs.num_commits }}
+          CHUNK_SIZE: ${{ github.event.inputs.chunk_size }}
         run: |
-          matrix=$(jq -c --arg t "$TARGET" 'if $t == "" then . else map(select(.target_name == $t)) end' .github/membrowse-targets.json)
-          if [ "$matrix" = "[]" ]; then
+          targets=$(jq -c --arg t "$TARGET" 'if $t == "" then . else map(select(.target_name == $t)) end' .github/membrowse-targets.json)
+          if [ "$targets" = "[]" ]; then
             echo "::error::No target named '$TARGET' in .github/membrowse-targets.json"
+            exit 1
+          fi
+          chunks=$(git rev-list --first-parent --reverse -n "$NUM_COMMITS" origin/main \
+            | jq -R . | jq -sc --argjson n "$CHUNK_SIZE" \
+              '[range(0; length; $n) as $i | .[$i:$i+$n]] | map({last_commit: .[-1], num_commits: (length | tostring)})')
+          matrix=$(jq -nc --argjson t "$targets" --argjson c "$chunks" '[$t[] as $t | $c | to_entries[] | $t + .value + {chunk: .key}]')
+          echo "Jobs: $(echo "$matrix" | jq length)"
+          if [ "$(echo "$matrix" | jq length)" -gt 256 ]; then
+            echo "::error::More than 256 jobs; raise chunk_size or pick a single target"
             exit 1
           fi
           echo "matrix=$matrix" >> $GITHUB_OUTPUT
 
   onboard:
+    name: onboard (${{ matrix.target_name }} part ${{ matrix.chunk }})
     needs: load-targets
     runs-on: ubuntu-latest
     strategy:
@@ -67,11 +90,16 @@ jobs:
       - name: Keep SLC tools outside the checkout
         run: cp -a slc/tools "${{ runner.temp }}/slc-tools"
 
+      # Onboarding walks back num_commits from HEAD, so put HEAD at the chunk's
+      # newest commit. Name the branch main so reports are filed under main.
+      - name: Check out the chunk's newest commit
+        run: git checkout -q -B main ${{ matrix.last_commit }}
+
       - name: Run MemBrowse Onboard Action
         uses: membrowse/membrowse-action/onboard-action@v1
         with:
           target_name: ${{ matrix.target_name }}
-          num_commits: ${{ github.event.inputs.num_commits }}
+          num_commits: ${{ matrix.num_commits }}
           build_script: rm -rf slc/tools && cp -a "${{ runner.temp }}/slc-tools" slc/tools && ${{ matrix.build_cmd }}
           elf: ${{ matrix.elf }}
           ld: ${{ matrix.ld }}
